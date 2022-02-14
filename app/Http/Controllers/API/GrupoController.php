@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
 use App\Http\Resources\GrupoResource;
+use Illuminate\Support\Facades\Auth;
 
 class GrupoController extends Controller
 {
@@ -16,6 +17,8 @@ class GrupoController extends Controller
      */
     public function index()
     {
+        $usuarioAutentcado = Auth::user()-grupos()
+        $gruposUsuarioAutenticado = Auth::user()->grupos;
         return GrupoResource::collection(Grupo::paginate());
     }
 
